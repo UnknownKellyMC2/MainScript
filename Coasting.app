@@ -793,7 +793,7 @@ function Library:CreateTab(name)
             end)
     
             CircleSelector.InputBegan:Connect(function(input)
-                if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
                     SliderDragging = true
                 end
             end)
@@ -805,13 +805,13 @@ function Library:CreateTab(name)
             end)
             
             CircleSelector.InputBegan:Connect(function(input)
-                if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
                     Sliding(input)
                 end
             end)
         
             UserInputService.InputChanged:Connect(function(input)
-                if SliderDragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+                if SliderDragging and input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
                     Sliding(input)
                 end
             end)
@@ -1131,7 +1131,7 @@ function Library:CreateTab(name)
             callback(Color.BackgroundColor3)
     
             Color.InputBegan:Connect(function(input)
-                if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
                     if RainbowColorPicker then return end
     
                     if ColorInput then
@@ -1152,7 +1152,7 @@ function Library:CreateTab(name)
             end)
     
             Color.InputEnded:Connect(function(input)
-                if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
                     if ColorInput then
                         ColorInput:Disconnect()
                     end
@@ -1160,7 +1160,7 @@ function Library:CreateTab(name)
             end)
     
             Hue.InputBegan:Connect(function(input)
-                if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
                     if RainbowColorPicker then return end
     
                     if HueInput then
@@ -1179,7 +1179,7 @@ function Library:CreateTab(name)
             end)
     
             Hue.InputEnded:Connect(function(input)
-                if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
                     if HueInput then
                         HueInput:Disconnect()
                     end
